@@ -19,29 +19,29 @@
         }
         .container {
             max-width: 1000px;
-            margin: 0 auto;
-            border: 1px solid #2c2c2c;
+              margin: 0 auto;
+              border: 1px solid #2c2c2c;
             padding: 2rem;
         }
         header {
             border-left: 4px solid #ff44aa;
-            padding-left: 1rem;
+              padding-left: 1rem;
             margin-bottom: 2rem;
         }
-        h1 {
-            font-size: 3.2rem;
-            letter-spacing: -1px;
+          h1 {
+              font-size: 3.2rem;
+              letter-spacing: -1px;
             color: #ff44aa;
-            background: #111;
+              background: #111;
             display: inline-block;
             padding: 0 0.5rem;
         }
         .tag {
             color: #aaa;
-            font-size: 0.9rem;
-            margin-top: 0.7rem;
-            background: #111;
-            display: inline-block;
+               font-size: 0.9rem;
+                margin-top: 0.7rem;
+                  background: #111;
+                display: inline-block;
             padding: 0.2rem 0.6rem;
         }
         hr {
@@ -113,7 +113,8 @@
 <div class="container">
     <header>
         <h1>NARKOWAXXXL</h1>
-        <div class="tag">скиллОВЫЙ ЧЕЛ НА ХАТТЕ</div>
+        <div class="tag">скиллОВЫЙ ЧЕЛ НА ХАТЕ<span class="fire-portfolio-hard">ПОРТФОЛИО</span>
+        </div>
     </header>
 
     <!-- я уже заебалась пробелы ебучие ставить -->
@@ -150,7 +151,7 @@
     </div>
 </div>
 
-<div class="черновик-метка супер-радуга">
+<div class="РАДУГА">
     🏳️‍🌈 МЕТКА ORIGINAL SITE of РАШЕН ФЕДЕРАШЕН ФАКЕН КАУНТРИ 🏳️‍🌈
 </div>
 
@@ -185,6 +186,32 @@
         letter-spacing: 1px !important;
         backdrop-filter: blur(5px) !important;
     }
+
+        .fire-portfolio-hard {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #ff6600;
+    background: repeating-linear-gradient(45deg, #000, #000 10px, #ff6600 10px, #ff6600 20px);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 8px #ff9900;
+    animation: дрожь 0.1s infinite, пульс 0.5s alternate infinite;
+    display: inline-block;
+}
+
+@keyframes дрожь {
+    0% { transform: translate(0px, 0px) rotate(0deg); }
+    25% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 1px) rotate(-1deg); }
+    75% { transform: translate(1px, 1px) rotate(0.5deg); }
+    100% { transform: translate(0px, 0px) rotate(0deg); }
+}
+
+@keyframes пульс {
+    from { text-shadow: 0 0 2px #ff6600; }
+    to { text-shadow: 0 0 15px #ff4400, 0 0 20px black; }
+}
 </style>
 </body>
 </html>
