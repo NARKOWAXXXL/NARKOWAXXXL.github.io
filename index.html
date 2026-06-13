@@ -72,6 +72,7 @@
             position: relative;
             z-index: 1;
             backdrop-filter: blur(2px);
+            background: rgba(5, 5, 10, 0.3);
         }
         
         header {
@@ -116,6 +117,14 @@
             border: 1px solid #2a2a2a;
             border-radius: 8px;
             box-shadow: 2px 2px 0 #1a1a1a;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffaa44;
+            box-shadow: 0 5px 15px rgba(255, 170, 68, 0.2);
         }
         
         .project-card h3 {
@@ -124,12 +133,61 @@
             font-size: 1.3rem;
         }
         
+        .project-card .доп-информация {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            color: #ffaa88;
+            font-size: 0.85rem;
+        }
+        
+        .project-card:hover .доп-информация {
+            max-height: 100px;
+            opacity: 1;
+            margin-top: 0.8rem;
+            border-top: 1px dashed #ffaa44;
+            padding-top: 0.8rem;
+        }
+        
         .contact-links {
             background: #050505;
             padding: 1.5rem;
             text-align: center;
             border: 1px dashed #ff44aa;
             margin: 2rem 0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-links::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 30px,
+                rgba(255, 68, 170, 0.05) 30px,
+                rgba(255, 68, 170, 0.05) 60px
+            );
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        
+        .contact-links:hover::before {
+            opacity: 1;
+            animation: космический_узор 20s linear infinite;
+        }
+        
+        @keyframes космический_узор {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         .contact-links a {
@@ -141,14 +199,14 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: inline-block;
             position: relative;
+            z-index: 1;
         }
         
         .contact-links a:hover {
-            background: rgba(255, 68, 170, 0.15);
-            color: #ff88cc;
-            text-shadow: 0 0 6px #ff44aa;
+            color: #ffcc66;
+            text-shadow: 0 0 8px #ff8800;
             transform: scale(1.05) translateY(-2px);
-            border-bottom: 1px solid #ff88cc;
+            border-bottom: 1px solid #ffaa44;
             padding: 2px 6px;
             border-radius: 20px;
         }
@@ -249,11 +307,11 @@
         
         .комета {
             position: fixed;
-            width: 3px;
-            height: 3px;
-            background: linear-gradient(135deg, #fff, #ffcc88);
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #ffffff, #ffffaa, #ffaa66);
             border-radius: 50%;
-            box-shadow: 0 0 6px #fff, 0 0 10px #ffaa66;
+            box-shadow: 0 0 12px #fff, 0 0 20px #ffaa44, 0 0 30px #ff6600;
             pointer-events: none;
             z-index: 9999;
         }
@@ -261,13 +319,23 @@
         .комета::before {
             content: "";
             position: absolute;
-            top: 0;
-            left: -40px;
-            width: 70px;
-            height: 2px;
-            background: linear-gradient(90deg, rgba(255,255,200,0.7), rgba(255,160,80,0.3), transparent);
+            top: 1px;
+            left: -60px;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0.9) 0%, 
+                rgba(255,220,100,0.7) 30%, 
+                rgba(255,100,50,0.4) 60%,
+                transparent 100%);
             border-radius: 50%;
-            filter: blur(2px);
+            filter: blur(3px);
+            animation: свечение_хвоста 0.5s ease-in-out infinite alternate;
+        }
+        
+        @keyframes свечение_хвоста {
+            0% { opacity: 0.6; filter: blur(2px); width: 100px; left: -60px; }
+            100% { opacity: 1; filter: blur(4px); width: 120px; left: -70px; }
         }
         
         .можно-копировать {
@@ -285,6 +353,18 @@
         a:focus, a:active, button:focus, button:active {
             outline: none;
             -webkit-tap-highlight-color: transparent;
+        }
+        
+        .нижняя-площадка {
+            max-width: 1000px;
+            margin: 2rem auto 0;
+            border: 1px solid #2c2c2c;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(2px);
+            background: rgba(5, 5, 10, 0.3);
+            text-align: center;
         }
     </style>
 </head>
@@ -307,21 +387,24 @@
     <div class="work-grid">
         <div class="project-card">
             <h3>#1 SEEKAS</h3>
-            <p>АААААААААААХ~ AOOOOOOOOOHHHHHHHH</p>
+            <div class="основной-текст">АААААААААААХ~ AOOOOOOOOOHHHHHHHH</div>
+            <div class="доп-информация">✨ полный разъёб этого проекта: чирк-чирк на HTML, скес родной, израильский пропеллер в действии</div>
         </div>
         <div class="project-card">
             <h3>#2 НА ВКУС И ЧЛЕН ТОВАРИЩА НЕТ</h3>
-            <p>зато на размер)))))).....</p>
+            <div class="основной-текст">зато на размер)))))).....</div>
+            <div class="доп-информация">💀 эксклюзивная хуйня, которую никто не поймёт, но все оценят масштаб</div>
         </div>
         <div class="project-card">
             <h3>#3 experimental</h3>
-            <p>Я НЕ ЗНАЮ КСТАТИ МОЖНО ЛИ ЗДЕСЬ МАТЕРИТСЯ</p>
+            <div class="основной-текст">Я НЕ ЗНАЮ КСТАТИ МОЖНО ЛИ ЗДЕСЬ МАТЕРИТСЯ</div>
+            <div class="доп-информация">🎭 спойлер: можно. и даже нужно. экспериментальный контент без цензуры</div>
         </div>
     </div>
 
     <div class="contact-links">
         контракт(подпиши) для связи:<br><br>
-        (((((✦ <a href="#">Telegram(ТЦК)</a> ((((✦))) <a href="#">GitHub</a> ✦))))) <a href="#">почта(антон)</a> ✦)))))
+        (((((✦ <a href="#" class="telegram-кнопка">Telegram(ТЦК)</a> ((((✦))) <a href="#">GitHub</a> ✦))))) <a href="#">почта(антон)</a> ✦)))))
         <div style="margin-top: 1rem; font-size: 0.7rem;">членосошу ваше личное время</div>
     </div>
 
@@ -334,26 +417,31 @@
     .МЕТКА ORIGINAL SITE of РАШЕН ФЕДЕРАШЕН ФАКЕН КАУНТРИ. НО ЛГБТ.
 </div>
 
-<div style="height: 400px; display: flex; align-items: center; justify-content: center; opacity: 0.4; font-size: 14px; color: #666; gap: 30px; flex-wrap: wrap; position: relative; z-index: 1;">
-    <span>⬇️ ТУТ БУДЕТ ЕЩЁ НИШТЯК ⬇️</span>
-    <span>💀</span>
-    <span>⬇️ СКРОЛЛИМ ДАЛЬШЕ ⬇️</span>
-                        <span>🔥</span>
-    <span>⬇️ АЖИТАЖ ПРОДОЛЖАЕТСЯ ⬇️</span>
+<div class="нижняя-площадка">
+    <div style="height: 400px; display: flex; align-items: center; justify-content: center; opacity: 0.4; font-size: 14px; color: #666; gap: 30px; flex-wrap: wrap;">
+        <span>⬇️ ТУТ БУДЕТ ЕЩЁ НИШТЯК ⬇️</span>
+        <span>💀</span>
+        <span>⬇️ СКРОЛЛИМ ДАЛЬШЕ ⬇️</span>
+        <span>🔥</span>
+        <span>⬇️ АЖИТАЖ ПРОДОЛЖАЕТСЯ ⬇️</span>
+    </div>
 </div>
 
 <script>
+// РАДУЖНАЯ ХУЙНЯ БЬЁТСЯ ОБ УГЛЫ И ДЕФОРМИРУЕТСЯ
 (function() {
     const радуга = document.querySelector('.РАДУГА');
     if (!радуга) return;
     
     let скоростьX = (Math.random() * 1.2 + 0.6) * (Math.random() > 0.5 ? 1 : -1);
     let скоростьY = (Math.random() * 1.2 + 0.6) * (Math.random() > 0.5 ? 1 : -1);
+    
     let posX = Math.random() * (window.innerWidth - 200) + 100;
     let posY = Math.random() * (window.innerHeight - 100) + 50;
+    
     let ширинаЭлемента = 0;
     let высотаЭлемента = 0;
-       let ширинаОкна = 0;
+    let ширинаОкна = 0;
     let высотаОкна = 0;
     
     function обновитьРазмеры() {
@@ -377,12 +465,29 @@
     function обновитьПозицию() {
         posX += скоростьX;
         posY += скоростьY;
+        
         let отскочил = false;
         
-        if (posX <= 0) { posX = 0; скоростьX = -скоростьX; отскочил = true; }
-        if (posX + ширинаЭлемента >= ширинаОкна) { posX = ширинаОкна - ширинаЭлемента; скоростьX = -скоростьX; отскочил = true; }
-        if (posY <= 0) { posY = 0; скоростьY = -скоростьY; отскочил = true; }
-        if (posY + высотаЭлемента >= высотаОкна) { posY = высотаОкна - высотаЭлемента; скоростьY = -скоростьY; отскочил = true; }
+        if (posX <= 0) {
+            posX = 0;
+            скоростьX = -скоростьX;
+            отскочил = true;
+        }
+        if (posX + ширинаЭлемента >= ширинаОкна) {
+            posX = ширинаОкна - ширинаЭлемента;
+            скоростьX = -скоростьX;
+            отскочил = true;
+        }
+        if (posY <= 0) {
+            posY = 0;
+            скоростьY = -скоростьY;
+            отскочил = true;
+        }
+        if (posY + высотаЭлемента >= высотаОкна) {
+            posY = высотаОкна - высотаЭлемента;
+            скоростьY = -скоростьY;
+            отскочил = true;
+        }
         
         if (отскочил) {
             упругоеСжатие();
@@ -423,13 +528,17 @@
     }, 100);
 })();
 
+// ПАДАЮЩИЕ КОМЕТЫ
 function создать_комету() {
     const комета = document.createElement('div');
     комета.className = 'комета';
-          const startX = Math.random() * window.innerWidth;
+    
+    const startX = Math.random() * window.innerWidth;
     const startY = Math.random() * window.innerHeight * 0.2;
-                 комета.style.left = startX + 'px';
+    
+    комета.style.left = startX + 'px';
     комета.style.top = startY + 'px';
+    
     document.body.appendChild(комета);
     
     let posX = startX;
@@ -442,20 +551,91 @@ function создать_комету() {
         posY += speedY;
         комета.style.left = posX + 'px';
         комета.style.top = posY + 'px';
+        
         if (posX < window.innerWidth + 200 && posY < window.innerHeight + 200) {
             requestAnimationFrame(лететь);
         } else {
             if (комета.parentNode) комета.remove();
         }
     }
+    
     requestAnimationFrame(лететь);
-    setTimeout(() => { if (комета.parentNode) комета.remove(); }, 2500);
+    
+    setTimeout(() => {
+        if (комета.parentNode) комета.remove();
+    }, 2500);
 }
 
-setInterval(() => { if (Math.random() > 0.4) создать_комету(); }, 500);
-for(let i = 0; i < 10; i++) { setTimeout(() => создать_комету(), i * 300); }
+setInterval(() => {
+    if (Math.random() > 0.4) {
+        создать_комету();
+    }
+}, 500);
 
-document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
+for(let i = 0; i < 10; i++) {
+    setTimeout(() => создать_комету(), i * 300);
+}
+
+// КОТЫ-КОНФЕТТИ ПРИ КЛИКЕ НА TELEGRAM
+function blowCats(clickX, clickY) {
+    const cats = ['🐱', '😺', '😸', '😻', '😽', '🐈', '🐈‍⬛', '😹', '😼', '🙀', '😿', '😾', '🐱‍👤'];
+    for (let i = 0; i < 20; i++) {
+        setTimeout(() => {
+            const cat = document.createElement('div');
+            cat.className = 'конфетти';
+            cat.textContent = cats[Math.floor(Math.random() * cats.length)];
+            const angle = Math.random() * Math.PI * 2;
+            const force = 60 + Math.random() * 120;
+            const dx = Math.cos(angle) * force;
+            const dy = Math.sin(angle) * force - 60;
+            cat.style.left = (clickX + (Math.random() - 0.5) * 40) + 'px';
+            cat.style.top = (clickY - 20) + 'px';
+            cat.style.setProperty('--x', dx + 'px');
+            cat.style.setProperty('--y', dy + 'px');
+            document.body.appendChild(cat);
+            setTimeout(() => cat.remove(), 1000);
+        }, i * 25);
+    }
+}
+
+// Добавляем стили для конфетти, если их нет
+if (!document.querySelector('#конфетти-стили')) {
+    const style = document.createElement('style');
+    style.id = 'конфетти-стили';
+    style.textContent = `
+        @keyframes конфетти-падение {
+            0% { transform: translate(0,0) rotate(0deg); opacity: 1; }
+            100% { transform: translate(var(--x, 50px), var(--y, 100px)) rotate(360deg); opacity: 0; }
+        }
+        .конфетти {
+            position: fixed;
+            font-size: 22px;
+            pointer-events: none;
+            z-index: 10000;
+            animation: конфетти-падение 0.9s ease-out forwards;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const tgBtn = document.querySelector('.telegram-кнопка');
+    if (tgBtn) {
+        tgBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const rect = tgBtn.getBoundingClientRect();
+            blowCats(rect.left + rect.width / 2, rect.top + rect.height / 2);
+        });
+    }
+});
+
+// ЗАПРЕТ ПРАВОЙ КНОПКИ
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    return false;
+});
+
+// ЗАПРЕТ КОПИРОВАНИЯ (кроме разрешённых блоков)
 document.addEventListener('copy', function(e) {
     const selection = window.getSelection().toString();
     if (selection.length > 0 && !e.target.closest('.можно-копировать')) {
@@ -463,6 +643,8 @@ document.addEventListener('copy', function(e) {
         return false;
     }
 });
+
+// ЗАЩИТА ОТ КОМБИНАЦИЙ
 document.addEventListener('keydown', function(e) {
     if (e.ctrlKey && (e.key === 'c' || e.key === 's' || e.key === 'u' || e.key === 'C' || e.key === 'S' || e.key === 'U')) {
         if (e.key === 'c' || e.key === 'C') {
@@ -476,8 +658,14 @@ document.addEventListener('keydown', function(e) {
             return false;
         }
     }
-    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) { e.preventDefault(); return false; }
-    if (e.key === 'F12') { e.preventDefault(); return false; }
+    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
+        e.preventDefault();
+        return false;
+    }
+    if (e.key === 'F12') {
+        e.preventDefault();
+        return false;
+    }
 });
 </script>
 
