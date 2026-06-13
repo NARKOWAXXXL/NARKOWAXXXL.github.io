@@ -3,32 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NARKOWAXXXL | ПИЗДОХРЯКНУТЬСЯ СО ВХОДА.</title>
+    <title>NARKOWAXXXL | ЗВЁЗДНЫЙ ПЕРЕХОД + ПАРАЛЛАКС</title>
     <style>
-        /* ДА ЧЕ ЗА ХУЙНЯ ЭТОТ ВАШ ШЫТИМЫЕЛ */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
             -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
             user-select: none;
         }
-        
-        /* КОСМОС ЕБАНЫЙ В РОТ - ФОН */
+
+        /* ГЛУБОКИЙ КОСМОС С ПЛАВНЫМ ПЕРЕХОДОМ */
         body {
-            background: radial-gradient(ellipse at center, #0a0f1a 0%, #03050a 100%);
+            background: radial-gradient(ellipse at 30% 40%, #05070c 0%, #020308 100%);
             font-family: 'Courier New', monospace, system-ui;
-            color: #e0e0e0;
+            color: #dbdbdb;
             padding: 1.5rem;
             position: relative;
             overflow-x: hidden;
-            min-height: 200vh;
+            min-height: 220vh;
         }
-        
-        /* ЗВЕЗДНЫЙ ФОН */
+
+        /* БАЗОВЫЕ ЗВЁЗДЫ (ВСЮДУ) */
         body::before {
             content: "";
             position: fixed;
@@ -37,102 +34,157 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(2px 2px at 15% 30%, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 72% 18%, #fff, rgba(0,0,0,0)),
-                radial-gradient(3px 3px at 45% 85%, #ffeedd, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 92% 44%, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 8% 67%, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 53% 12%, #ffe0aa, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 88% 76%, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 34% 53%, #fff, rgba(0,0,0,0)),
-                radial-gradient(2px 2px at 67% 91%, #fff, rgba(0,0,0,0)),
-                radial-gradient(1px 1px at 5% 48%, #ffcc99, rgba(0,0,0,0));
+                radial-gradient(2px 2px at 15% 30%, #fff, transparent),
+                radial-gradient(1px 1px at 72% 18%, #fff, transparent),
+                radial-gradient(3px 3px at 45% 85%, #ffeedd, transparent),
+                radial-gradient(1px 1px at 92% 44%, #fff, transparent),
+                radial-gradient(2px 2px at 8% 67%, #fff, transparent),
+                radial-gradient(1px 1px at 53% 12%, #ffe0aa, transparent),
+                radial-gradient(2px 2px at 88% 76%, #fff, transparent),
+                radial-gradient(1px 1px at 34% 53%, #fff, transparent),
+                radial-gradient(2px 2px at 67% 91%, #fff, transparent),
+                radial-gradient(1px 1px at 5% 48%, #ffcc99, transparent),
+                radial-gradient(2px 2px at 25% 65%, #aaddff, transparent),
+                radial-gradient(1px 1px at 55% 33%, #ffddaa, transparent),
+                radial-gradient(3px 3px at 78% 92%, #ccddff, transparent),
+                radial-gradient(1px 1px at 12% 55%, #ffffff, transparent),
+                radial-gradient(2px 2px at 88% 15%, #ffccaa, transparent),
+                radial-gradient(1px 1px at 42% 77%, #fff, transparent),
+                radial-gradient(2px 2px at 63% 44%, #ffeedd, transparent),
+                radial-gradient(1px 1px at 91% 62%, #ffffff, transparent),
+                /* НОВЫЕ ЗВЁЗДЫ ДЛЯ ПЛАВНОГО ПЕРЕХОДА ВНИЗ */
+                radial-gradient(2px 2px at 10% 85%, #fff, transparent),
+                radial-gradient(1px 1px at 35% 92%, #ffeedd, transparent),
+                radial-gradient(3px 3px at 60% 88%, #aaccff, transparent),
+                radial-gradient(2px 2px at 85% 80%, #fff, transparent),
+                radial-gradient(1px 1px at 95% 90%, #ffddaa, transparent),
+                radial-gradient(2px 2px at 20% 95%, #ffffff, transparent),
+                radial-gradient(3px 3px at 45% 98%, #ccddff, transparent);
             background-repeat: no-repeat;
             pointer-events: none;
             z-index: 0;
         }
-        
+
+        /* СЛОИ ПАРАЛЛАКСА */
+        .parallax-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .layer1 { background: radial-gradient(2px 2px at 15% 30%, #fff, transparent), radial-gradient(1px 1px at 72% 18%, #fff, transparent), radial-gradient(3px 3px at 45% 85%, #ffeedd, transparent), radial-gradient(1px 1px at 92% 44%, #fff, transparent); background-repeat: no-repeat; transform: translateZ(-20px) scale(1.8); opacity: 0.5; }
+        .layer2 { background: radial-gradient(2px 2px at 8% 67%, #fff, transparent), radial-gradient(1px 1px at 53% 12%, #ffe0aa, transparent), radial-gradient(2px 2px at 88% 76%, #fff, transparent); background-repeat: no-repeat; transform: translateZ(-10px) scale(1.4); opacity: 0.7; }
+        .layer3 { background: radial-gradient(2px 2px at 25% 65%, #aaddff, transparent), radial-gradient(1px 1px at 55% 33%, #ffddaa, transparent), radial-gradient(3px 3px at 78% 92%, #ccddff, transparent); background-repeat: no-repeat; transform: translateZ(0px); opacity: 0.9; }
+        .layer4 { background: radial-gradient(2px 2px at 15% 80%, #fff, transparent), radial-gradient(3px 3px at 50% 95%, #ffeedd, transparent), radial-gradient(1px 1px at 85% 88%, #aaffcc, transparent), radial-gradient(2px 2px at 30% 92%, #fff, transparent); background-repeat: no-repeat; transform: translateZ(10px) scale(1.1); opacity: 0.8; }
+
+        /* ГРАДИЕНТ ВНИЗ — СГЛАЖИВАЕТ ПЕРЕХОД */
         body::after {
             content: "";
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 200px;
-            background: linear-gradient(to bottom, transparent, #03050a);
+            height: 400px;
+            background: linear-gradient(to bottom, transparent, #010101 90%);
             pointer-events: none;
             z-index: 0;
         }
-        
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
-            border: 1px solid #2c2c2c;
+            border: 1px solid #2a2a2a;
             padding: 2rem;
             position: relative;
             z-index: 1;
             backdrop-filter: blur(2px);
-            background: rgba(5, 5, 10, 0.3);
+            background: rgba(5, 5, 10, 0.25);
         }
-        
+
+        /* СВЕЧЕНИЕ ТЕКСТА */
+        .container *:hover {
+            transition: text-shadow 0.2s ease, color 0.2s ease;
+        }
+        .container p:hover,
+        .container h1:hover,
+        .container h3:hover,
+        .container .tag:hover,
+        .container .основной-текст:hover {
+            color: #ffffff !important;
+            text-shadow: 0 0 8px rgba(255,255,255,0.7);
+        }
+
+        /* ШАПКА */
         header {
-            border-left: 4px solid #ff44aa;
+            border-left: 3px solid #ff44aa;
             padding-left: 1rem;
             margin-bottom: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
-        
+        header:hover {
+            border-left-color: #ffaacc;
+            text-shadow: 0 0 4px #ff44aa;
+            transform: translateX(5px);
+        }
+
         h1 {
             font-size: 3.2rem;
             letter-spacing: -1px;
             color: #ff44aa;
-            background: #111;
+            background: #0a0a0a;
             display: inline-block;
             padding: 0 0.5rem;
+            transition: all 0.3s ease;
         }
-        
+        h1:hover {
+            background: #ff44aa;
+            color: #000 !important;
+            box-shadow: 0 0 12px #ff44aa;
+        }
+
         .tag {
-            color: #aaa;
+            color: #bbbbbb;
             font-size: 0.9rem;
             margin-top: 0.7rem;
-            background: #111;
+            background: #0a0a0a;
             display: inline-block;
             padding: 0.2rem 0.6rem;
         }
-        
+
         hr {
-            border-color: #2c2c2c;
+            border-color: #2a2a2a;
             margin: 1.8rem 0;
         }
-        
+
         .work-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 1rem;
             margin: 2rem 0;
         }
-        
+
         .project-card {
-            background: #0f0f0f;
+            background: #0a0a0a;
             padding: 1rem;
             border: 1px solid #2a2a2a;
             border-radius: 8px;
-            box-shadow: 2px 2px 0 #1a1a1a;
             transition: all 0.3s ease;
             cursor: pointer;
+            overflow: hidden;
         }
-        
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             border-color: #ffaa44;
-            box-shadow: 0 5px 15px rgba(255, 170, 68, 0.2);
+            box-shadow: 0 6px 14px rgba(255, 170, 68, 0.15);
         }
-        
         .project-card h3 {
             color: #ffaa44;
             margin-bottom: 0.5rem;
-            font-size: 1.3rem;
         }
-        
         .project-card .доп-информация {
             max-height: 0;
             opacity: 0;
@@ -141,7 +193,6 @@
             color: #ffaa88;
             font-size: 0.85rem;
         }
-        
         .project-card:hover .доп-информация {
             max-height: 100px;
             opacity: 1;
@@ -149,18 +200,26 @@
             border-top: 1px dashed #ffaa44;
             padding-top: 0.8rem;
         }
-        
+
+        /* РОЗОВАЯ КНОПКА */
         .contact-links {
-            background: #050505;
+            background: rgba(10, 5, 15, 0.7);
             padding: 1.5rem;
             text-align: center;
-            border: 1px dashed #ff44aa;
+            border: 1px solid #ff66aa;
             margin: 2rem 0;
-            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            transition: all 0.4s ease;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 20px rgba(255, 68, 170, 0.2);
         }
-        
+        .contact-links:hover {
+            background: rgba(20, 8, 30, 0.8);
+            border-color: #ff88cc;
+            box-shadow: 0 0 25px rgba(255, 68, 170, 0.4);
+        }
         .contact-links::before {
             content: "";
             position: absolute;
@@ -172,437 +231,173 @@
                 45deg,
                 transparent,
                 transparent 30px,
-                rgba(255, 68, 170, 0.05) 30px,
-                rgba(255, 68, 170, 0.05) 60px
+                rgba(255, 100, 180, 0.08) 30px,
+                rgba(255, 100, 180, 0.08) 60px
             );
             opacity: 0;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.5s;
             pointer-events: none;
         }
-        
         .contact-links:hover::before {
             opacity: 1;
             animation: космический_узор 20s linear infinite;
         }
-        
         @keyframes космический_узор {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        
+
         .contact-links a {
-            color: #ffaa44;
+            color: #ffaa88;
             text-decoration: none;
             font-weight: bold;
-            border-bottom: 1px dotted #ffaa44;
+            border-bottom: 1px dotted #ff88aa;
             margin: 0 0.5rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.2s ease;
             display: inline-block;
-            position: relative;
-            z-index: 1;
         }
-        
         .contact-links a:hover {
-            color: #ffcc66;
-            text-shadow: 0 0 8px #ff8800;
-            transform: scale(1.05) translateY(-2px);
-            border-bottom: 1px solid #ffaa44;
-            padding: 2px 6px;
-            border-radius: 20px;
+            color: #ffffff !important;
+            text-shadow: 0 0 8px #ffaacc;
+            transform: scale(1.02);
+            border-bottom-color: #ffffff;
         }
-        
+
+        .contact-links .stars {
+            letter-spacing: 2px;
+            color: #ffccaa;
+        }
+
+        .нижняя-площадка {
+            max-width: 1000px;
+            margin: 2rem auto 0;
+            border: 1px solid #2a2a2a;
+            padding: 1.5rem;
+            background: rgba(10, 10, 15, 0.4);
+            backdrop-filter: blur(3px);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-radius: 12px;
+        }
+        .нижняя-площадка:hover {
+            background: rgba(20, 20, 30, 0.6);
+            border-color: #ff88aa;
+            box-shadow: 0 0 12px rgba(255, 136, 170, 0.2);
+        }
+        .нижняя-площадка span {
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+        .нижняя-площадка span:hover {
+            transform: scale(1.05) translateY(-2px);
+            text-shadow: 0 0 6px #ffaacc;
+            color: #ffffff;
+        }
+
         .footer {
             text-align: center;
-            color: #3a3a3a;
+            color: #4a4a5a;
             margin-top: 2rem;
             font-size: 0.7rem;
-            border-top: 1px solid #1e1e1e;
+            border-top: 1px solid #1e1e2a;
             padding-top: 1rem;
         }
-        
+        .угрожающая-подпись {
+            text-align: center;
+            color: #cc6644;
+            text-shadow: 0 0 2px #ff4422;
+            letter-spacing: 1px;
+        }
+
         @media (max-width: 600px) {
-            body { padding: 0.5rem; }
+            body { padding: 0.8rem; }
             .container { padding: 1rem; }
             h1 { font-size: 2rem; }
         }
-        
+
         .РАДУГА {
             position: fixed;
             background: black;
-            padding: 6px 12px;
+            padding: 5px 12px;
             border-radius: 30px;
             border: 2px solid;
             font-family: monospace;
             font-size: 11px;
             font-weight: bold;
-            letter-spacing: 1px;
             z-index: 999;
             animation: RUSSIA_RAINBOW 1.5s infinite, РАДУГА_ФОН 1.5s infinite;
             white-space: nowrap;
             cursor: pointer;
-            transition: transform 0.2s ease;
+            backdrop-filter: blur(3px);
+            transition: transform 0.05s linear;
         }
-        
-        .РАДУГА:hover {
-            transform: scale(1.05);
-        }
-        
         @keyframes RUSSIA_RAINBOW {
-            0% { color: red; text-shadow: 0 0 5px red; border-color: red; }
-            17% { color: orange; text-shadow: 0 0 5px orange; border-color: orange; }
-            34% { color: yellow; text-shadow: 0 0 5px yellow; border-color: yellow; }
-            51% { color: green; text-shadow: 0 0 5px green; border-color: green; }
-            68% { color: blue; text-shadow: 0 0 5px blue; border-color: blue; }
-            85% { color: indigo; text-shadow: 0 0 5px indigo; border-color: indigo; }
-            100% { color: violet; text-shadow: 0 0 5px violet; border-color: violet; }
+            0% { color: red; text-shadow: 0 0 4px red; border-color: red; }
+            17% { color: orange; text-shadow: 0 0 4px orange; border-color: orange; }
+            34% { color: yellow; text-shadow: 0 0 4px yellow; border-color: yellow; }
+            51% { color: green; text-shadow: 0 0 4px green; border-color: green; }
+            68% { color: blue; text-shadow: 0 0 4px blue; border-color: blue; }
+            85% { color: indigo; text-shadow: 0 0 4px indigo; border-color: indigo; }
+            100% { color: violet; text-shadow: 0 0 4px violet; border-color: violet; }
         }
-        
         @keyframes РАДУГА_ФОН {
-            0% { background: rgba(255,0,0,0.2); }
-            5% { background: rgba(255,40,0,0.2); }
-            10% { background: rgba(255,80,0,0.2); }
-            15% { background: rgba(255,120,0,0.2); }
-            20% { background: rgba(255,165,0,0.2); }
-            25% { background: rgba(255,200,0,0.2); }
-            30% { background: rgba(255,230,0,0.2); }
-            35% { background: rgba(235,255,0,0.2); }
-            40% { background: rgba(200,255,0,0.2); }
-            45% { background: rgba(150,255,0,0.2); }
-            50% { background: rgba(0,255,0,0.2); }
-            55% { background: rgba(0,255,80,0.2); }
-            60% { background: rgba(0,255,160,0.2); }
-            65% { background: rgba(0,255,200,0.2); }
-            70% { background: rgba(0,200,255,0.2); }
-            75% { background: rgba(0,150,255,0.2); }
-            80% { background: rgba(0,80,255,0.2); }
-            85% { background: rgba(0,0,255,0.2); }
-            90% { background: rgba(80,0,200,0.2); }
-            95% { background: rgba(160,0,150,0.2); }
-            100% { background: rgba(238,130,238,0.2); }
+            0% { background: rgba(255,0,0,0.15); }
+            25% { background: rgba(255,165,0,0.15); }
+            50% { background: rgba(0,255,0,0.15); }
+            75% { background: rgba(0,0,255,0.15); }
+            100% { background: rgba(238,130,238,0.15); }
         }
-        
+
         .fire-portfolio-hard {
             font-size: 2rem;
             font-weight: 900;
-            background: repeating-linear-gradient(45deg, #000, #000 10px, #ff6600 10px, #ff6600 20px);
-            -webkit-background-clip: text;
+            background: repeating-linear-gradient(45deg, #000, #000 8px, #ff4400 8px, #ff6600 16px, #000 16px, #000 24px);
             background-clip: text;
+            -webkit-background-clip: text;
             color: transparent;
-            animation: дрожь 0.1s infinite, пульс 0.5s alternate infinite;
+            animation: порно-пульс 0.8s ease-in-out infinite, намек 2s ease infinite;
             display: inline-block;
         }
-        
-        @keyframes дрожь {
-            0% { transform: translate(0px, 0px) rotate(0deg); }
-            25% { transform: translate(1px, -1px) rotate(1deg); }
-            50% { transform: translate(-1px, 1px) rotate(-1deg); }
-            75% { transform: translate(1px, 1px) rotate(0.5deg); }
-            100% { transform: translate(0px, 0px) rotate(0deg); }
+        @keyframes порно-пульс {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); letter-spacing: 1px; }
+            100% { transform: scale(1); }
         }
-        
-        @keyframes пульс {
-            from { text-shadow: 0 0 2px #ff6600; }
-            to { text-shadow: 0 0 15px #ff4400, 0 0 20px black; }
+        @keyframes намек {
+            0% { text-shadow: 0 0 2px #ff4400; }
+            100% { text-shadow: 0 0 10px #ff8800; }
         }
-        
+
         .комета {
             position: fixed;
             width: 4px;
             height: 4px;
-            background: radial-gradient(circle, #ffffff, #ffffaa, #ffaa66);
+            background: radial-gradient(circle, #fff, #ffaa66);
             border-radius: 50%;
-            box-shadow: 0 0 12px #fff, 0 0 20px #ffaa44, 0 0 30px #ff6600;
+            box-shadow: 0 0 12px #ffaa66;
             pointer-events: none;
             z-index: 9999;
         }
-        
         .комета::before {
             content: "";
             position: absolute;
             top: 1px;
             left: -60px;
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(90deg, 
-                rgba(255,255,255,0.9) 0%, 
-                rgba(255,220,100,0.7) 30%, 
-                rgba(255,100,50,0.4) 60%,
-                transparent 100%);
-            border-radius: 50%;
-            filter: blur(3px);
-            animation: свечение_хвоста 0.5s ease-in-out infinite alternate;
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255,255,200,0.8), rgba(255,100,50,0.3), transparent);
+            filter: blur(2px);
         }
-        
-        @keyframes свечение_хвоста {
-            0% { opacity: 0.6; filter: blur(2px); width: 100px; left: -60px; }
-            100% { opacity: 1; filter: blur(4px); width: 120px; left: -70px; }
-        }
-        
+
         .можно-копировать {
             -webkit-user-select: text;
-            -moz-user-select: text;
-            -ms-user-select: text;
             user-select: text;
         }
-        
         .можно-копировать::selection {
-            background: rgba(255, 68, 170, 0.3);
-            color: #ffaa44;
+            background: rgba(255, 68, 170, 0.2);
+            color: #ffaa88;
         }
-        
-        a:focus, a:active, button:focus, button:active {
-            outline: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-        
-        .нижняя-площадка {
-            max-width: 1000px;
-            margin: 2rem auto 0;
-            border: 1px solid #2c2c2c;
-            padding: 2rem;
-            position: relative;
-            z-index: 1;
-            backdrop-filter: blur(2px);
-            background: rgba(5, 5, 10, 0.3);
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
 
-<div class="container">
-    <header>
-        <h1>NARKOWAXXXL</h1>
-        <div class="tag">скиллОВЫЙ ЧЕЛ НА ХАТЕ<span class="fire-portfolio-hard">ПОРТФОЛИО</span>
-        </div>
-    </header>
-
-    <section>
-        <p style="font-size: 1.3rem; margin-bottom: 0.8rem; line-height: 1.3;"><strong>занимаюсь 100% заинтересующей тебя хуйней</strong></p>
-        <p style="background: #111; padding: 0.8rem;">блядь да за две минуты я вам нахуячу такой израильский пропеллер на ебучем шатимиел и кссго. Я САМА НИШЕВОСТЬ БЛЯЯЯЯЯЯДЬ ТЕЛКИ</p>
-    </section>
-
-    <hr/>
-
-    <div class="work-grid">
-        <div class="project-card">
-            <h3>#1 SEEKAS</h3>
-            <div class="основной-текст">АААААААААААХ~ AOOOOOOOOOHHHHHHHH</div>
-            <div class="доп-информация">✨ полный разъёб этого проекта: чирк-чирк на HTML, скес родной, израильский пропеллер в действии</div>
-        </div>
-        <div class="project-card">
-            <h3>#2 НА ВКУС И ЧЛЕН ТОВАРИЩА НЕТ</h3>
-            <div class="основной-текст">зато на размер)))))).....</div>
-            <div class="доп-информация">💀 эксклюзивная хуйня, которую никто не поймёт, но все оценят масштаб</div>
-        </div>
-        <div class="project-card">
-            <h3>#3 experimental</h3>
-            <div class="основной-текст">Я НЕ ЗНАЮ КСТАТИ МОЖНО ЛИ ЗДЕСЬ МАТЕРИТСЯ</div>
-            <div class="доп-информация">🎭 спойлер: можно. и даже нужно. экспериментальный контент без цензуры</div>
-        </div>
-    </div>
-
-    <div class="contact-links">
-        контракт(подпиши) для связи:<br><br>
-        (((((✦ <a href="#" class="telegram-кнопка">Telegram(ТЦК)</a> ((((✦))) <a href="#">GitHub</a> ✦))))) <a href="#">почта(антон)</a> ✦)))))
-        <div style="margin-top: 1rem; font-size: 0.7rem;">членосошу ваше личное время</div>
-    </div>
-
-    <div class="footer">
-        .NARKOWAXXXL ВАШ ЛИЧНЫЙ ПОСТАВЩИК ХУЙНИ. 
-    </div>
-</div>
-
-<div class="РАДУГА">
-    .МЕТКА ORIGINAL SITE of РАШЕН ФЕДЕРАШЕН ФАКЕН КАУНТРИ. НО ЛГБТ.
-</div>
-
-<div class="нижняя-площадка">
-    <div style="height: 400px; display: flex; align-items: center; justify-content: center; opacity: 0.4; font-size: 14px; color: #666; gap: 30px; flex-wrap: wrap;">
-        <span>⬇️ ТУТ БУДЕТ ЕЩЁ НИШТЯК ⬇️</span>
-        <span>💀</span>
-        <span>⬇️ СКРОЛЛИМ ДАЛЬШЕ ⬇️</span>
-        <span>🔥</span>
-        <span>⬇️ АЖИТАЖ ПРОДОЛЖАЕТСЯ ⬇️</span>
-    </div>
-</div>
-
-<script>
-// РАДУЖНАЯ ХУЙНЯ БЬЁТСЯ ОБ УГЛЫ И ДЕФОРМИРУЕТСЯ
-(function() {
-    const радуга = document.querySelector('.РАДУГА');
-    if (!радуга) return;
-    
-    let скоростьX = (Math.random() * 1.2 + 0.6) * (Math.random() > 0.5 ? 1 : -1);
-    let скоростьY = (Math.random() * 1.2 + 0.6) * (Math.random() > 0.5 ? 1 : -1);
-    
-    let posX = Math.random() * (window.innerWidth - 200) + 100;
-    let posY = Math.random() * (window.innerHeight - 100) + 50;
-    
-    let ширинаЭлемента = 0;
-    let высотаЭлемента = 0;
-    let ширинаОкна = 0;
-    let высотаОкна = 0;
-    
-    function обновитьРазмеры() {
-        ширинаЭлемента = радуга.offsetWidth;
-        высотаЭлемента = радуга.offsetHeight;
-        ширинаОкна = window.innerWidth;
-        высотаОкна = window.innerHeight;
-    }
-    
-    function упругоеСжатие() {
-        радуга.style.transition = 'transform 0.08s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-        радуга.style.transform = 'scale(0.92, 1.08)';
-        setTimeout(() => {
-            радуга.style.transform = 'scale(1, 1)';
-            setTimeout(() => {
-                радуга.style.transition = '';
-            }, 80);
-        }, 80);
-    }
-    
-    function обновитьПозицию() {
-        posX += скоростьX;
-        posY += скоростьY;
-        
-        let отскочил = false;
-        
-        if (posX <= 0) {
-            posX = 0;
-            скоростьX = -скоростьX;
-            отскочил = true;
-        }
-        if (posX + ширинаЭлемента >= ширинаОкна) {
-            posX = ширинаОкна - ширинаЭлемента;
-            скоростьX = -скоростьX;
-            отскочил = true;
-        }
-        if (posY <= 0) {
-            posY = 0;
-            скоростьY = -скоростьY;
-            отскочил = true;
-        }
-        if (posY + высотаЭлемента >= высотаОкна) {
-            posY = высотаОкна - высотаЭлемента;
-            скоростьY = -скоростьY;
-            отскочил = true;
-        }
-        
-        if (отскочил) {
-            упругоеСжатие();
-            радуга.style.animation = 'none';
-            setTimeout(() => {
-                радуга.style.animation = 'RUSSIA_RAINBOW 1.5s infinite, РАДУГА_ФОН 1.5s infinite';
-            }, 10);
-        }
-        
-        радуга.style.left = posX + 'px';
-        радуга.style.bottom = 'auto';
-        радуга.style.top = posY + 'px';
-    }
-    
-    function анимировать() {
-        обновитьПозицию();
-        requestAnimationFrame(анимировать);
-    }
-    
-    window.addEventListener('resize', () => {
-        обновитьРазмеры();
-        if (posX + ширинаЭлемента > ширинаОкна) posX = ширинаОкна - ширинаЭлемента;
-        if (posY + высотаЭлемента > высотаОкна) posY = высотаОкна - высотаЭлемента;
-        if (posX < 0) posX = 0;
-        if (posY < 0) posY = 0;
-        радуга.style.left = posX + 'px';
-        радуга.style.top = posY + 'px';
-    });
-    
-    setTimeout(() => {
-        обновитьРазмеры();
-        радуга.style.position = 'fixed';
-        радуга.style.left = posX + 'px';
-        радуга.style.top = posY + 'px';
-        радуга.style.bottom = 'auto';
-        радуга.style.willChange = 'left, top, transform';
-        анимировать();
-    }, 100);
-})();
-
-// ПАДАЮЩИЕ КОМЕТЫ
-function создать_комету() {
-    const комета = document.createElement('div');
-    комета.className = 'комета';
-    
-    const startX = Math.random() * window.innerWidth;
-    const startY = Math.random() * window.innerHeight * 0.2;
-    
-    комета.style.left = startX + 'px';
-    комета.style.top = startY + 'px';
-    
-    document.body.appendChild(комета);
-    
-    let posX = startX;
-    let posY = startY;
-    const speedX = 3 + Math.random() * 8;
-    const speedY = 2.5 + Math.random() * 7;
-    
-    function лететь() {
-        posX += speedX;
-        posY += speedY;
-        комета.style.left = posX + 'px';
-        комета.style.top = posY + 'px';
-        
-        if (posX < window.innerWidth + 200 && posY < window.innerHeight + 200) {
-            requestAnimationFrame(лететь);
-        } else {
-            if (комета.parentNode) комета.remove();
-        }
-    }
-    
-    requestAnimationFrame(лететь);
-    
-    setTimeout(() => {
-        if (комета.parentNode) комета.remove();
-    }, 2500);
-}
-
-setInterval(() => {
-    if (Math.random() > 0.4) {
-        создать_комету();
-    }
-}, 500);
-
-for(let i = 0; i < 10; i++) {
-    setTimeout(() => создать_комету(), i * 300);
-}
-
-// КОТЫ-КОНФЕТТИ ПРИ КЛИКЕ НА TELEGRAM
-function blowCats(clickX, clickY) {
-    const cats = ['🐱', '😺', '😸', '😻', '😽', '🐈', '🐈‍⬛', '😹', '😼', '🙀', '😿', '😾', '🐱‍👤'];
-    for (let i = 0; i < 20; i++) {
-        setTimeout(() => {
-            const cat = document.createElement('div');
-            cat.className = 'конфетти';
-            cat.textContent = cats[Math.floor(Math.random() * cats.length)];
-            const angle = Math.random() * Math.PI * 2;
-            const force = 60 + Math.random() * 120;
-            const dx = Math.cos(angle) * force;
-            const dy = Math.sin(angle) * force - 60;
-            cat.style.left = (clickX + (Math.random() - 0.5) * 40) + 'px';
-            cat.style.top = (clickY - 20) + 'px';
-            cat.style.setProperty('--x', dx + 'px');
-            cat.style.setProperty('--y', dy + 'px');
-            document.body.appendChild(cat);
-            setTimeout(() => cat.remove(), 1000);
-        }, i * 25);
-    }
-}
-
-// Добавляем стили для конфетти, если их нет
-if (!document.querySelector('#конфетти-стили')) {
-    const style = document.createElement('style');
-    style.id = 'конфетти-стили';
-    style.textContent = `
         @keyframes конфетти-падение {
             0% { transform: translate(0,0) rotate(0deg); opacity: 1; }
             100% { transform: translate(var(--x, 50px), var(--y, 100px)) rotate(360deg); opacity: 0; }
@@ -614,60 +409,305 @@ if (!document.querySelector('#конфетти-стили')) {
             z-index: 10000;
             animation: конфетти-падение 0.9s ease-out forwards;
         }
-    `;
-    document.head.appendChild(style);
-}
+        
+        .particle {
+            position: fixed;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            animation: floatParticles 6s linear infinite;
+            filter: blur(0.5px);
+        }
+        @keyframes floatParticles {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            20% { opacity: 0.6; }
+            80% { opacity: 0.3; }
+            100% { transform: translateY(-200px) translateX(40px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
 
-document.addEventListener('DOMContentLoaded', () => {
-    const tgBtn = document.querySelector('.telegram-кнопка');
-    if (tgBtn) {
-        tgBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const rect = tgBtn.getBoundingClientRect();
-            blowCats(rect.left + rect.width / 2, rect.top + rect.height / 2);
+<!-- СЛОИ ПАРАЛЛАКСА -->
+<div class="parallax-layer layer1"></div>
+<div class="parallax-layer layer2"></div>
+<div class="parallax-layer layer3"></div>
+<div class="parallax-layer layer4"></div>
+
+<div class="container">
+    <header id="magicHeader">
+        <h1>NARKOWAXXXL</h1>
+        <div class="tag">скиллОВЫЙ ЧЕЛ НА ХАТЕ<span class="fire-portfolio-hard"> ПОРТФОЛИО</span></div>
+    </header>
+
+    <section>
+        <p style="font-size: 1.3rem; margin-bottom: 0.8rem;"><strong>занимаюсь 100% заинтересующей тебя хуйней</strong></p>
+        <p style="background: #0a0a0a; padding: 0.8rem;">блядь да за две минуты я вам нахуячу такой израильский пропеллер на ебучем шатимиел и кссго. Я САМА НИШЕВОСТЬ БЛЯЯЯЯЯЯДЬ ТЕЛКИ</p>
+    </section>
+
+    <hr/>
+
+    <div class="work-grid">
+        <div class="project-card" data-sound="project">
+            <h3>#1 SEEKAS</h3>
+            <div class="основной-текст">АААААААААААХ~ AOOOOOOOOOHHHHHHHH</div>
+            <div class="доп-информация">✨ полный разъёб этого проекта: чирк-чирк на HTML, скес родной</div>
+        </div>
+        <div class="project-card" data-sound="project">
+            <h3>#2 НА ВКУС И ЧЛЕН ТОВАРИЩА НЕТ</h3>
+            <div class="основной-текст">зато на размер)))))).....</div>
+            <div class="доп-информация">💀 эксклюзивная хуйня, которую никто не поймёт</div>
+        </div>
+        <div class="project-card" data-sound="project">
+            <h3>#3 experimental</h3>
+            <div class="основной-текст">Я НЕ ЗНАЮ КСТАТИ МОЖНО ЛИ ЗДЕСЬ МАТЕРИТСЯ</div>
+            <div class="доп-информация">🎭 спойлер: можно. и даже нужно.</div>
+        </div>
+    </div>
+
+    <div class="contact-links">
+        контракт(подпиши) для связи:<br><br>
+        <span class="stars">(((((✦</span> <a href="#" class="telegram-кнопка" id="telegramLink">Telegram(ТЦК)</a> <span class="stars">((((✦)))</span> <a href="#" data-sound="link">GitHub</a> <span class="stars">✦)))))</span> <a href="#" data-sound="link">почта(антон)</a> <span class="stars">✦))))))</span>
+        <div style="margin-top: 1rem; font-size: 0.7rem;">членосошу ваше личное время</div>
+    </div>
+
+    <div class="footer угрожающая-подпись">
+        .NARKOWAXXXL ВАШ ЛИЧНЫЙ ПОСТАВЩИК ХУЙНИ.
+    </div>
+</div>
+
+<div class="РАДУГА">🌈 .МЕТКА ORIGINAL SITE of РАШЕН ФЕДЕРАШЕН ФАКЕН КАУНТРИ. НО ЛГБТ.</div>
+
+<div class="нижняя-площадка">
+    <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap; font-size: 1rem;">
+        <span>✨ ТУТ БУДЕТ НИШТЯК</span>
+        <span>🌀</span>
+        <span>⬇️ ЛЕГКО СКРОЛЛИМ ВНИЗ ⬇️</span>
+        <span>💫</span>
+        <span>АЖИТАЖ ПРОДОЛЖАЕТСЯ ✨</span>
+    </div>
+</div>
+
+<script>
+    // ЧАСТИЦЫ
+    function createParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * window.innerWidth + 'px';
+        particle.style.top = Math.random() * window.innerHeight + 'px';
+        particle.style.animationDelay = Math.random() * 5 + 's';
+        particle.style.animationDuration = 4 + Math.random() * 4 + 's';
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 8000);
+    }
+    setInterval(createParticle, 700);
+    for(let i = 0; i < 30; i++) setTimeout(createParticle, i * 200);
+    
+    // ПАРАЛЛАКС
+    window.addEventListener('scroll', () => {
+        let scrolled = window.pageYOffset;
+        let layers = document.querySelectorAll('.parallax-layer');
+        layers.forEach((layer, index) => {
+            let speed = (index + 1) * 0.15;
+            let yPos = scrolled * speed;
+            layer.style.transform = `translateY(${yPos}px)`;
         });
+    });
+    
+    // ЗВУКИ
+    let audioCtx = null;
+    let soundAllowed = false;
+    
+    function initAudio() {
+        if (!audioCtx) {
+            audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+        }
+        soundAllowed = true;
     }
-});
-
-// ЗАПРЕТ ПРАВОЙ КНОПКИ
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    return false;
-});
-
-// ЗАПРЕТ КОПИРОВАНИЯ (кроме разрешённых блоков)
-document.addEventListener('copy', function(e) {
-    const selection = window.getSelection().toString();
-    if (selection.length > 0 && !e.target.closest('.можно-копировать')) {
-        e.preventDefault();
-        return false;
+    
+    function playBeep(freq = 440, duration = 0.2, type = 'sine', volume = 0.1) {
+        if (!soundAllowed) return;
+        if (!audioCtx) initAudio();
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.type = type;
+        osc.frequency.value = freq;
+        gain.gain.setValueAtTime(volume, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+        osc.start();
+        osc.stop(now + duration);
     }
-});
-
-// ЗАЩИТА ОТ КОМБИНАЦИЙ
-document.addEventListener('keydown', function(e) {
-    if (e.ctrlKey && (e.key === 'c' || e.key === 's' || e.key === 'u' || e.key === 'C' || e.key === 'S' || e.key === 'U')) {
-        if (e.key === 'c' || e.key === 'C') {
-            const selection = window.getSelection().toString();
-            if (selection.length > 0 && !e.target.closest('.можно-копировать')) {
-                e.preventDefault();
-                return false;
-            }
-        } else {
-            e.preventDefault();
-            return false;
+    
+    function playMeow() {
+        if (!soundAllowed) return;
+        if (!audioCtx) initAudio();
+        const now = audioCtx.currentTime;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(380, now);
+        osc.frequency.exponentialRampToValueAtTime(520, now + 0.15);
+        osc.frequency.exponentialRampToValueAtTime(300, now + 0.3);
+        gain.gain.setValueAtTime(0.15, now);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.5);
+        osc.start();
+        osc.stop(now + 0.5);
+    }
+    
+    function playProjectSound() {
+        playBeep(660, 0.15, 'sine', 0.08);
+    }
+    
+    function playLinkSound() {
+        playBeep(880, 0.1, 'triangle', 0.06);
+    }
+    
+    document.body.addEventListener('click', () => {
+        if (!soundAllowed) {
+            initAudio();
+            playBeep(440, 0.05, 'sine', 0.05);
+        }
+    }, { once: true });
+    
+    document.querySelectorAll('.contact-links a').forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            playLinkSound();
+        });
+    });
+    
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', () => {
+            playProjectSound();
+        });
+    });
+    
+    function blowCatsFromElement(element) {
+        const rect = element.getBoundingClientRect();
+        const cats = ['🐱','😺','😸','😻','😽','🐈','🐈‍⬛','😹','😼','🙀','😿','😾','🐱‍👤'];
+        for (let i = 0; i < 22; i++) {
+            setTimeout(() => {
+                const cat = document.createElement('div');
+                cat.className = 'конфетти';
+                cat.textContent = cats[Math.floor(Math.random() * cats.length)];
+                const angle = Math.random() * Math.PI * 2;
+                const force = 40 + Math.random() * 100;
+                const dx = Math.cos(angle) * force;
+                const dy = Math.sin(angle) * force - 60;
+                cat.style.left = (rect.left + Math.random() * rect.width) + 'px';
+                cat.style.top = (rect.top - 5) + 'px';
+                cat.style.setProperty('--x', dx + 'px');
+                cat.style.setProperty('--y', dy + 'px');
+                document.body.appendChild(cat);
+                setTimeout(() => cat.remove(), 900);
+            }, i * 25);
         }
     }
-    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
-        e.preventDefault();
-        return false;
+    
+    const telegramLink = document.getElementById('telegramLink');
+    if (telegramLink) {
+        telegramLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            playMeow();
+            blowCatsFromElement(telegramLink);
+        });
     }
-    if (e.key === 'F12') {
-        e.preventDefault();
-        return false;
+    
+    const header = document.getElementById('magicHeader');
+    header.addEventListener('mouseenter', () => {
+        playBeep(280, 0.25, 'sine', 0.1);
+    });
+    
+    // РАДУГА (ПРУЖИНИСТАЯ)
+    (function(){
+        const r = document.querySelector('.РАДУГА');
+        if(!r) return;
+        let vx = (Math.random()*1.2+0.6)*(Math.random()>0.5?1:-1);
+        let vy = (Math.random()*1.2+0.6)*(Math.random()>0.5?1:-1);
+        let x = Math.random()*(window.innerWidth-200)+100;
+        let y = Math.random()*(window.innerHeight-100)+50;
+        let w=0,h=0,ww=0,wh=0;
+        const box = document.querySelector('.container');
+        function up(){ w=r.offsetWidth; h=r.offsetHeight; ww=window.innerWidth; wh=window.innerHeight; }
+        function def(t){
+            r.style.transition='transform 0.05s cubic-bezier(0.68,-0.55,0.265,1.55)';
+            r.style.transform = t==='h' ? 'scale(0.85,1.15)' : 'scale(1.15,0.85)';
+            setTimeout(()=>{ r.style.transform='scale(1,1)'; setTimeout(()=>r.style.transition='',80); },80);
+        }
+        function move(){
+            x+=vx; y+=vy;
+            let hit=false, ht='h';
+            if(x<=0){ x=0; vx=-vx; hit=true; ht='v'; }
+            if(x+w>=ww){ x=ww-w; vx=-vx; hit=true; ht='v'; }
+            if(y<=0){ y=0; vy=-vy; hit=true; ht='h'; }
+            if(y+h>=wh){ y=wh-h; vy=-vy; hit=true; ht='h'; }
+            if(box){
+                const br = box.getBoundingClientRect();
+                const rr = { left:x, right:x+w, top:y, bottom:y+h };
+                if(rr.right>br.left && rr.left<br.right && rr.bottom>br.top && rr.top<br.bottom){
+                    if(Math.min(rr.right-br.left, br.right-rr.left) < Math.min(rr.bottom-br.top, br.bottom-rr.top)){
+                        if(rr.left+rr.right < br.left+br.right) x = br.left-w-2;
+                        else x = br.right+2;
+                        vx=-vx; ht='v';
+                    } else {
+                        if(rr.top+rr.bottom < br.top+br.bottom) y = br.top-h-2;
+                        else y = br.bottom+2;
+                        vy=-vy; ht='h';
+                    }
+                    hit=true;
+                }
+            }
+            if(hit){
+                def(ht);
+                r.style.animation='none';
+                setTimeout(()=>{ r.style.animation='RUSSIA_RAINBOW 1.5s infinite, РАДУГА_ФОН 1.5s infinite'; },20);
+            }
+            r.style.left=x+'px'; r.style.top=y+'px'; r.style.bottom='auto';
+        }
+        function anim(){ move(); requestAnimationFrame(anim); }
+        window.addEventListener('resize',()=>{ up(); if(x+w>ww) x=ww-w; if(y+h>wh) y=wh-h; if(x<0) x=0; if(y<0) y=0; r.style.left=x+'px'; r.style.top=y+'px'; });
+        setTimeout(()=>{ up(); r.style.position='fixed'; r.style.left=x+'px'; r.style.top=y+'px'; anim(); },100);
+    })();
+    
+    // КОМЕТЫ
+    function spawn(){
+        const c=document.createElement('div'); c.className='комета';
+        const sx=Math.random()*window.innerWidth, sy=Math.random()*window.innerHeight*0.2;
+        c.style.left=sx+'px'; c.style.top=sy+'px';
+        document.body.appendChild(c);
+        let x=sx, y=sy;
+        const vx=2+Math.random()*7, vy=2+Math.random()*6;
+        function fly(){
+            x+=vx; y+=vy;
+            c.style.left=x+'px'; c.style.top=y+'px';
+            if(x<window.innerWidth+200 && y<window.innerHeight+200) requestAnimationFrame(fly);
+            else if(c.parentNode) c.remove();
+        }
+        requestAnimationFrame(fly);
+        setTimeout(()=>{ if(c.parentNode) c.remove(); },2500);
     }
-});
+    setInterval(()=>{ if(Math.random()>0.4) spawn(); },500);
+    for(let i=0;i<8;i++) setTimeout(()=>spawn(), i*300);
+    
+    document.addEventListener('contextmenu',e=>e.preventDefault());
+    document.addEventListener('copy',e=>{ if(window.getSelection().toString() && !e.target.closest('.можно-копировать')) e.preventDefault(); });
+    document.addEventListener('keydown',e=>{
+        if(e.ctrlKey && (e.key==='c'||e.key==='s'||e.key==='u')){
+            if(e.key==='c' && window.getSelection().toString() && !e.target.closest('.можно-копировать')) e.preventDefault();
+            else if(e.key!=='c') e.preventDefault();
+        }
+        if((e.ctrlKey && e.shiftKey && e.key==='I') || e.key==='F12') e.preventDefault();
+    });
 </script>
-
 </body>
 </html>
