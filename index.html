@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-                   -webkit-tap-highlight-color: transparent;
+            -webkit-tap-highlight-color: transparent;
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
@@ -22,10 +22,10 @@
             background: radial-gradient(ellipse at center, #0a0f1a 0%, #03050a 100%);
             font-family: 'Courier New', monospace, system-ui;
             color: #e0e0e0;
-                    padding: 1.5rem;
+            padding: 1.5rem;
             position: relative;
             overflow-x: hidden;
-            min-height: 200vh; /* УДЛИНЕНИЕ МЕГА-МОЩНОЕ */
+            min-height: 200vh;
         }
         
         /* ЗВЕЗДНЫЙ ФОН */
@@ -34,25 +34,24 @@
             position: fixed;
             top: 0;
             left: 0;
-               width: 100%;
+            width: 100%;
             height: 100%;
             background-image: 
                 radial-gradient(2px 2px at 15% 30%, #fff, rgba(0,0,0,0)),
-                 radial-gradient(1px 1px at 72% 18%, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 72% 18%, #fff, rgba(0,0,0,0)),
                 radial-gradient(3px 3px at 45% 85%, #ffeedd, rgba(0,0,0,0)),
                 radial-gradient(1px 1px at 92% 44%, #fff, rgba(0,0,0,0)),
-                   radial-gradient(2px 2px at 8% 67%, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 8% 67%, #fff, rgba(0,0,0,0)),
                 radial-gradient(1px 1px at 53% 12%, #ffe0aa, rgba(0,0,0,0)),
                 radial-gradient(2px 2px at 88% 76%, #fff, rgba(0,0,0,0)),
                 radial-gradient(1px 1px at 34% 53%, #fff, rgba(0,0,0,0)),
-                 radial-gradient(2px 2px at 67% 91%, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 67% 91%, #fff, rgba(0,0,0,0)),
                 radial-gradient(1px 1px at 5% 48%, #ffcc99, rgba(0,0,0,0));
             background-repeat: no-repeat;
             pointer-events: none;
             z-index: 0;
         }
         
-        /* ГРАДИЕНТ ВНИЗ ДЛЯ ПЛАВНОСТИ */
         body::after {
             content: "";
             position: absolute;
@@ -169,7 +168,6 @@
             h1 { font-size: 2rem; }
         }
         
-        /* РАДУГА С ПЛАВАНИЕМ */
         .РАДУГА {
             position: fixed;
             background: black;
@@ -225,7 +223,6 @@
             100% { background: rgba(238,130,238,0.2); }
         }
         
-        /* ОГНЕННОЕ ПОРТФОЛИО */
         .fire-portfolio-hard {
             font-size: 2rem;
             font-weight: 900;
@@ -250,7 +247,6 @@
             to { text-shadow: 0 0 15px #ff4400, 0 0 20px black; }
         }
         
-        /* КОМЕТЫ */
         .комета {
             position: fixed;
             width: 3px;
@@ -274,7 +270,6 @@
             filter: blur(2px);
         }
         
-        /* РАЗРЕШАЕМ КОПИРОВАТЬ ТОЛЬКО ВНУТРИ СПЕЦИАЛЬНОГО БЛОКА */
         .можно-копировать {
             -webkit-user-select: text;
             -moz-user-select: text;
@@ -287,7 +282,6 @@
             color: #ffaa44;
         }
         
-        /* УБИРАЕМ СИНЮЮ ХУЙНЮ ПРИ ТЫКЕ */
         a:focus, a:active, button:focus, button:active {
             outline: none;
             -webkit-tap-highlight-color: transparent;
@@ -340,42 +334,38 @@
     .МЕТКА ORIGINAL SITE of РАШЕН ФЕДЕРАШЕН ФАКЕН КАУНТРИ. НО ЛГБТ.
 </div>
 
-<!-- УДЛИНЕНИЕ САЙТА ДЛЯ СКРОЛЛА -->
 <div style="height: 400px; display: flex; align-items: center; justify-content: center; opacity: 0.4; font-size: 14px; color: #666; gap: 30px; flex-wrap: wrap; position: relative; z-index: 1;">
     <span>⬇️ ТУТ БУДЕТ ЕЩЁ НИШТЯК ⬇️</span>
     <span>💀</span>
     <span>⬇️ СКРОЛЛИМ ДАЛЬШЕ ⬇️</span>
-    <span>🔥</span>
+                        <span>🔥</span>
     <span>⬇️ АЖИТАЖ ПРОДОЛЖАЕТСЯ ⬇️</span>
 </div>
 
 <script>
-// РАДУЖНАЯ ХУЙНЯ БЬЁТСЯ ОБ УГЛЫ И ДЕФОРМИРУЕТСЯ
 (function() {
     const радуга = document.querySelector('.РАДУГА');
     if (!радуга) return;
     
     let скоростьX = (Math.random() * 1.2 + 0.6) * (Math.random() > 0.5 ? 1 : -1);
     let скоростьY = (Math.random() * 1.2 + 0.6) * (Math.random() > 0.5 ? 1 : -1);
-    
     let posX = Math.random() * (window.innerWidth - 200) + 100;
     let posY = Math.random() * (window.innerHeight - 100) + 50;
-    
     let ширинаЭлемента = 0;
     let высотаЭлемента = 0;
-                               let ширинаОкна = 0;
+       let ширинаОкна = 0;
     let высотаОкна = 0;
     
     function обновитьРазмеры() {
         ширинаЭлемента = радуга.offsetWidth;
         высотаЭлемента = радуга.offsetHeight;
-                  ширинаОкна = window.innerWidth;
+        ширинаОкна = window.innerWidth;
         высотаОкна = window.innerHeight;
     }
     
     function упругоеСжатие() {
         радуга.style.transition = 'transform 0.08s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-                            радуга.style.transform = 'scale(0.92, 1.08)';
+        радуга.style.transform = 'scale(0.92, 1.08)';
         setTimeout(() => {
             радуга.style.transform = 'scale(1, 1)';
             setTimeout(() => {
@@ -384,146 +374,88 @@
         }, 80);
     }
     
-         function обновитьПозицию() {
+    function обновитьПозицию() {
         posX += скоростьX;
         posY += скоростьY;
-        
         let отскочил = false;
         
-        if (posX <= 0) {
-            posX = 0;
-                          скоростьX = -скоростьX;
-            отскочил = true;
-        }
-        if (posX + ширинаЭлемента >= ширинаОкна) {
-            posX = ширинаОкна - ширинаЭлемента;
-                              скоростьX = -скоростьX;
-            отскочил = true;
-        }
-        if (posY <= 0) {
-                            posY = 0;
-                              скоростьY = -скоростьY;
-            отскочил = true;
-        }
-        if (posY + высотаЭлемента >= высотаОкна) {
-                   posY = высотаОкна - высотаЭлемента;
-                    скоростьY = -скоростьY;
-            отскочил = true;
-        }
+        if (posX <= 0) { posX = 0; скоростьX = -скоростьX; отскочил = true; }
+        if (posX + ширинаЭлемента >= ширинаОкна) { posX = ширинаОкна - ширинаЭлемента; скоростьX = -скоростьX; отскочил = true; }
+        if (posY <= 0) { posY = 0; скоростьY = -скоростьY; отскочил = true; }
+        if (posY + высотаЭлемента >= высотаОкна) { posY = высотаОкна - высотаЭлемента; скоростьY = -скоростьY; отскочил = true; }
         
         if (отскочил) {
-               упругоеСжатие();
-                  радуга.style.animation = 'none';
-                     setTimeout(() => {
-                      радуга.style.animation = 'RUSSIA_RAINBOW 1.5s infinite, РАДУГА_ФОН 1.5s infinite';
+            упругоеСжатие();
+            радуга.style.animation = 'none';
+            setTimeout(() => {
+                радуга.style.animation = 'RUSSIA_RAINBOW 1.5s infinite, РАДУГА_ФОН 1.5s infinite';
             }, 10);
         }
         
         радуга.style.left = posX + 'px';
-               радуга.style.bottom = 'auto';
-                радуга.style.top = posY + 'px';
+        радуга.style.bottom = 'auto';
+        радуга.style.top = posY + 'px';
     }
     
     function анимировать() {
-                обновитьПозицию();
+        обновитьПозицию();
         requestAnimationFrame(анимировать);
     }
     
     window.addEventListener('resize', () => {
         обновитьРазмеры();
-             if (posX + ширинаЭлемента > ширинаОкна) posX = ширинаОкна - ширинаЭлемента;
-                 if (posY + высотаЭлемента > высотаОкна) posY = высотаОкна - высотаЭлемента;
-                  if (posX < 0) posX = 0;
-                 if (posY < 0) posY = 0;
+        if (posX + ширинаЭлемента > ширинаОкна) posX = ширинаОкна - ширинаЭлемента;
+        if (posY + высотаЭлемента > высотаОкна) posY = высотаОкна - высотаЭлемента;
+        if (posX < 0) posX = 0;
+        if (posY < 0) posY = 0;
         радуга.style.left = posX + 'px';
         радуга.style.top = posY + 'px';
     });
     
     setTimeout(() => {
         обновитьРазмеры();
-                 радуга.style.position = 'fixed';
-                     радуга.style.left = posX + 'px';
-                         радуга.style.top = posY + 'px';
-                      радуга.style.bottom = 'auto';
+        радуга.style.position = 'fixed';
+        радуга.style.left = posX + 'px';
+        радуга.style.top = posY + 'px';
+        радуга.style.bottom = 'auto';
         радуга.style.willChange = 'left, top, transform';
         анимировать();
     }, 100);
 })();
 
-// ПАДАЮЩИЕ КОМЕТЫ — ТЕПЕРЬ ЯРКИЕ И ЧАСТЫЕ
 function создать_комету() {
     const комета = document.createElement('div');
-          комета.className = 'комета';
-    
+    комета.className = 'комета';
           const startX = Math.random() * window.innerWidth;
-    const startY = Math.random() * window.innerHeight * 0.2; // выше начинают
-    
-    комета.style.left = startX + 'px';
+    const startY = Math.random() * window.innerHeight * 0.2;
+                 комета.style.left = startX + 'px';
     комета.style.top = startY + 'px';
-    
     document.body.appendChild(комета);
     
     let posX = startX;
     let posY = startY;
-          const speedX = 3 + Math.random() * 8;  // быстрее
+    const speedX = 3 + Math.random() * 8;
     const speedY = 2.5 + Math.random() * 7;
     
     function лететь() {
         posX += speedX;
-              posY += speedY;
+        posY += speedY;
         комета.style.left = posX + 'px';
         комета.style.top = posY + 'px';
-        
         if (posX < window.innerWidth + 200 && posY < window.innerHeight + 200) {
             requestAnimationFrame(лететь);
         } else {
             if (комета.parentNode) комета.remove();
         }
     }
-    
     requestAnimationFrame(лететь);
-    
-    setTimeout(() => {
-        if (комета.parentNode) комета.remove();
-    }, 2500);
+    setTimeout(() => { if (комета.parentNode) комета.remove(); }, 2500);
 }
 
-// ЛЕТАЮТ ЧАЩЕ — КАЖДЫЕ 400-600 МС
- setInterval(() => {
-          if (Math.random() > 0.4) {  // чаще появляются
-                создать_комету();
-    }
-}, 500);
+setInterval(() => { if (Math.random() > 0.4) создать_комету(); }, 500);
+for(let i = 0; i < 10; i++) { setTimeout(() => создать_комету(), i * 300); }
 
-// мяу
-for(let i = 0; i < 10; i++) {
-    setTimeout(() => создать_комету(), i * 300);
-}
-    
-    requestAnimationFrame(лететь);
-    
-    setTimeout(() => {
-        if (комета.parentNode) комета.remove();
-    }, 3000);
-}
-
-setInterval(() => {
-    if (Math.random() > 0.5) {
-        создать_комету();
-    }
-}, 1000);
-
-for(let i = 0; i < 8; i++) {
-    setTimeout(() => создать_комету(), i * 400);
-}
-
-// ЗАПРЕТ ПРАВОЙ КНОПКИ фууууууу (чтобы не копировали)
-document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    return false;
-});
-
-// ЗАПРЕТ КОПИРОВАНИЯ (кроме разрешённых блоков)
+document.addEventListener('contextmenu', function(e) { e.preventDefault(); return false; });
 document.addEventListener('copy', function(e) {
     const selection = window.getSelection().toString();
     if (selection.length > 0 && !e.target.closest('.можно-копировать')) {
@@ -531,11 +463,9 @@ document.addEventListener('copy', function(e) {
         return false;
     }
 });
-
-// ЗАЩИТА ОТ КОМБИНАЦИЙ (Ctrl+C, Ctrl+S, F12 и т.д.)
 document.addEventListener('keydown', function(e) {
     if (e.ctrlKey && (e.key === 'c' || e.key === 's' || e.key === 'u' || e.key === 'C' || e.key === 'S' || e.key === 'U')) {
-                    if (e.key === 'c' || e.key === 'C') {
+        if (e.key === 'c' || e.key === 'C') {
             const selection = window.getSelection().toString();
             if (selection.length > 0 && !e.target.closest('.можно-копировать')) {
                 e.preventDefault();
@@ -546,14 +476,8 @@ document.addEventListener('keydown', function(e) {
             return false;
         }
     }
-    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) {
-        e.preventDefault();
-        return false;
-    }
-    if (e.key === 'F12') {
-        e.preventDefault();
-        return false;
-    }
+    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i')) { e.preventDefault(); return false; }
+    if (e.key === 'F12') { e.preventDefault(); return false; }
 });
 </script>
 
